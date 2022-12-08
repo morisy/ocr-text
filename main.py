@@ -28,14 +28,14 @@ class OCRcheck(AddOn):
             if not text.strip():
                 # If the text is empty, return a quality score of 1
                 self.set_message("No text in document! Score of 1")
-                return 1
+                quality_score = 1
 
             # Use regular expressions to find common OCR errors in the text
             errors = re.findall(r'[^\w\s]', text)
 
             # If there are no errors, return a quality score of 5
             if not errors:
-                return 5
+                 quality_score =  5
 
             # If there are errors, calculate the error rate by dividing the
             # number of errors by the length of the text
